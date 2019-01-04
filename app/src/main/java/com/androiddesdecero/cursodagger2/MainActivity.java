@@ -7,11 +7,13 @@ import android.util.Log;
 import com.androiddesdecero.cursodagger2.di.BaseApplication;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class MainActivity extends AppCompatActivity {
 
     private Motor motor;
 
+    @Named("diesel")
     @Inject
     Motor motorDiesel;
 

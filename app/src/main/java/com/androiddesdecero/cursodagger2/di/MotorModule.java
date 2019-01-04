@@ -3,6 +3,8 @@ package com.androiddesdecero.cursodagger2.di;
 import com.androiddesdecero.cursodagger2.Coche;
 import com.androiddesdecero.cursodagger2.Motor;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,13 +15,20 @@ import dagger.Provides;
 @Module
 public class MotorModule {
 
+    @Named("diesel")
     @Provides
     public Motor providesMotorDiesel(){
         return new Motor("Diesel");
     }
 
+    @Named("gasolina")
     @Provides
-    public Coche providesCoche(Motor motor){
+    public Motor providesMotorGasolina(){
+        return new Motor("Gasolina");
+    }
+
+    @Provides
+    public Coche providesCoche(@Named("gasolina") Motor motor){
         return new Coche(motor);
     }
 }
