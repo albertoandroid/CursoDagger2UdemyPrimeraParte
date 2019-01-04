@@ -8,6 +8,7 @@ import com.androiddesdecero.cursodagger2.di.BaseApplication;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 import dagger.Lazy;
 
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Lazy<Coche> cocheLazy;
 
+    @Inject
+    Provider<Coche> cocheProvider;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG1", coche.getCoche());
 
         Log.d("TAG1Lazy", cocheLazy.get().getCoche());
+
+        Log.d("TAG1Provider", cocheProvider.get().getCoche());
     }
 }
