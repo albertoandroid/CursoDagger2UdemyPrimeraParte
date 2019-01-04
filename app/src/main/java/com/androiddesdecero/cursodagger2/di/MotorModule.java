@@ -4,6 +4,7 @@ import com.androiddesdecero.cursodagger2.Coche;
 import com.androiddesdecero.cursodagger2.Motor;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -15,12 +16,14 @@ import dagger.Provides;
 @Module
 public class MotorModule {
 
+    @Singleton
     @Named("diesel")
     @Provides
     public Motor providesMotorDiesel(){
         return new Motor("Diesel");
     }
 
+    @Singleton
     @Named("gasolina")
     @Provides
     public Motor providesMotorGasolina(){
