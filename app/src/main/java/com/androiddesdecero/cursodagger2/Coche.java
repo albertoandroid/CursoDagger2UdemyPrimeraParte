@@ -8,10 +8,11 @@ public class Coche {
 
     private Motor motor;
 
+    /*
     public Coche(){
         motor = new Motor("Diesel");
     }
-
+    */
     public Coche(Motor motor){
         this.motor = motor;
     }

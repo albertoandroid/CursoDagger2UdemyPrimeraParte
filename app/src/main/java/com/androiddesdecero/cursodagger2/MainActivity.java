@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Motor motorDiesel;
 
+    @Inject
+    Coche coche;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG1", motor.getTipoMotor());
 
         Log.d("TAG1", motorDiesel.getTipoMotor());
+
+        Log.d("TAG1", coche.getCoche());
     }
 }

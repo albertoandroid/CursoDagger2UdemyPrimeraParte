@@ -1,5 +1,6 @@
 package com.androiddesdecero.cursodagger2.di;
 
+import com.androiddesdecero.cursodagger2.Coche;
 import com.androiddesdecero.cursodagger2.Motor;
 
 import dagger.Module;
@@ -11,8 +12,14 @@ import dagger.Provides;
 
 @Module
 public class MotorModule {
+
     @Provides
     public Motor providesMotorDiesel(){
         return new Motor("Diesel");
+    }
+
+    @Provides
+    public Coche providesCoche(Motor motor){
+        return new Coche(motor);
     }
 }
