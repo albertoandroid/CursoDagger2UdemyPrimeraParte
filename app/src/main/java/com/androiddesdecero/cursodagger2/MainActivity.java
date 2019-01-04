@@ -9,6 +9,8 @@ import com.androiddesdecero.cursodagger2.di.BaseApplication;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import dagger.Lazy;
+
 public class MainActivity extends AppCompatActivity {
 
     private Motor motor;
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Inject
     Coche coche;
+
+    @Inject
+    Lazy<Coche> cocheLazy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG1", motorDiesel.getTipoMotor());
 
         Log.d("TAG1", coche.getCoche());
+
+        Log.d("TAG1Lazy", cocheLazy.get().getCoche());
     }
 }
