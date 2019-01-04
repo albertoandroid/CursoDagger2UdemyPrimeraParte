@@ -14,5 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         motor = new Motor("Gasolina");
+        Log.d("TAG1", motor.getTipoMotor());
     }
 }
